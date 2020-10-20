@@ -1,0 +1,38 @@
+/* IN OTHER NEWS */
+
+.other-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+
+.news1, .news2 {
+    flex: 1;
+}
+
+.news-image {
+    display: flex;
+    justify-content: center;
+}
+
+.publicity {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.publicity img {
+    height: 200px;
+}
+
+
+@media(min-width: 768px){
+    .other-news {
+        flex-wrap: nowrap;
+    }
+    .news1, .news2 {
+        margin: 25px;
+    }
+}

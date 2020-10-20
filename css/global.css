@@ -7,3 +7,28 @@ body {
     text-align: justify;
 }
 
+h2 {
+    margin: 5px 0 0 0;
+    font-size: medium;
+    text-transform: uppercase;
+    text-align: center;
+    color: gray;
+}
+
+.border {
+    border-bottom:  1px solid gray;
+}
+
+footer {
+    background-color: black;
+    margin-top: 25px;
+}
+
+footer p{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-style: oblique;
+    margin: 0;
+    padding: 10px 0;;
+}
