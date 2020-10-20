@@ -1,0 +1,36 @@
+/* SPOTLIGHT */
+
+.spotlight h2 {
+    margin: 5px 0 0 0;
+    font-size: medium;
+    text-transform: uppercase;
+    text-align: center;
+    color: gray;
+}
+
+.main-article {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-content: center;
+}
+
+.spotlight-description {
+    flex-direction: column;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+.spotlight-image {
+    align-self: center;
+}
+
+.main-article img {
+    height:  130px;
+}
+
+@media(min-width: 768px){
+    .main-article {
+        flex-wrap: nowrap;
+    }
+}
