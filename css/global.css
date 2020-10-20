@@ -6,6 +6,9 @@ body {
 }
 
 /* HEADER */
+header {
+    border-bottom: solid black 4px;
+}
 
 #branding, .date {
     display:flex;
@@ -26,7 +29,6 @@ body {
 }
 
 .date {
-    border-bottom: solid black 4px;
     padding-bottom: 20px;
     font-style: oblique;
 }
@@ -38,14 +40,31 @@ body {
     height: 50px;
 }
 
-header nav {
+nav ul{
     display: none;
 }
 
 @media(min-width: 640px) {
-    header nav {
-        display: inline-flex;
-        list-style: armenian;
+  
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    nav ul li {
+        padding: 0 8px;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    nav ul li a:hover {
+        font-weight: bolder;
+        text-decoration: underline;
     }
 
     .burger-menu {
