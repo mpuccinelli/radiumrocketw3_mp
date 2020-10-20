@@ -6,6 +6,8 @@ This repository will contain one .html file corresponding the newspaper front pa
 
 The aim of such task is to continue developing skills regarding CSS and to be able to master the basics of FlexBox.
 
+You can access the newspaper from the following link: https://mpuccinelli.github.io/radiumrocketw3_mp/ 
+
       
 ## Copyright
 
