@@ -2,11 +2,10 @@
 
 .other-news {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
     margin: 15px;
 }
-
 
 .news1, .news2 {
     flex: 1;
@@ -18,21 +17,35 @@
 }
 
 .publicity {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    text-align: center;
 }
 
-.publicity img {
-    height: 200px;
+.publicity img{
+    height: 150px;
+    width: auto;
 }
-
 
 @media(min-width: 768px){
     .other-news {
+        flex-direction: row;
         flex-wrap: nowrap;
     }
     .news1, .news2 {
         margin: 25px;
     }
 }
+
+@media(min-width: 1240px){
+    .columns {
+        display: flex;
+    }
+
+    .publicity {
+        align-self: center;
+    }
+
+    .publicity img {
+        transform:rotate(-90deg)
+    }
+}
+
