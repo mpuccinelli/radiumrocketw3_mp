@@ -3,20 +3,37 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .form-input {
-    width: 80%;
+    width: 90%;
     margin: 1%;
 }
 
 .form-button {
     align-self: center;
-    width: 30%;
+    width: 20%;
     margin: 1%;
+    border: solid 2.5px grey;
+    font-style: oblique;
+    color: white;
+    background-color: black;
 }
 
 ::placeholder{
     font-style: italic;
     font-size: 1rem;
+}
+
+@media(min-width: 768px){
+    .subscription{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .form-input{
+        width: 45%;
+    }
 }
