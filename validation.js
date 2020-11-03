@@ -1,22 +1,19 @@
 var inputs = document.getElementsByClassName('form-input')
-var errors = document.getElementsByClassName('error-sign')
+
+for (i=0;i<inputs.length;i++){
+    inputs[i].addEventListener('focus',correct);
+}
 
 inputs[0].addEventListener('blur',validName);
-inputs[0].addEventListener('focus',correct);
-
-inputs[1].addEventListener('blur', validEmail);
-inputs[1].addEventListener('focus', correct);
-
+inputs[1].addEventListener('blur',validEmail);
 inputs[2].addEventListener('blur',validPass);
-inputs[2].addEventListener('focus', correct);
-
-// inputs[0].addEventListener('blur',validPassConfirm);
-// inputs[0].addEventListener('blur',validAge);
-// inputs[0].addEventListener('blur',validPhone);
-// inputs[0].addEventListener('blur',validAdress);
-// inputs[0].addEventListener('blur',validCity);
-// inputs[0].addEventListener('blur',validPC);
-// inputs[0].addEventListener('blur',validDNI);
+inputs[3].addEventListener('blur',validPassConfirm);
+inputs[4].addEventListener('blur',validAge);
+inputs[5].addEventListener('blur',validPhone);
+inputs[6].addEventListener('blur',validAdress);
+inputs[7].addEventListener('blur',validCity);
+inputs[8].addEventListener('blur',validCity)
+inputs[9].addEventListener('blur',validDNI);
 
 function correct(e){
     e.target.nextElementSibling.style.display = 'none';
@@ -48,14 +45,12 @@ function validEmail(e){
 
 function validPass(e){
     var text = e.target.value;
-    console.log(typeof(text[3]))
     var notvalid = false;
 
     for (i=0;i<text.length;i++){
         // USED REGULAR EXPRESION /^[A-Za-z]+$/ BECAUSE THERE IS NO TYPE "LETTER", SO I COULD NOT SEPARATE LETTERS FROM SPECIAL CHARACTERS LIKE !,#, ETC.
-        // USED REGULAR EXPRESION /^[0-9]+$/ BECAUSE CHARACTERS OF INPUT TEXT ARE TYPE "STRING", THIS WAY I CAN FIND OUT IF THE CHARACTER IS A NUMBER
 
-        if (text[i].match(/^[A-Za-z]+$/) === null && text[i].match(/^[0-9]+$/) === null) {
+        if (text[i].match(/^[A-Za-z]+$/) === null && typeof(text[i] % 1) != 'number') {
             notvalid = true;
         }
     }
@@ -64,5 +59,74 @@ function validPass(e){
             e.target.nextElementSibling.style.display = 'block';
         }
     }
-
 }
+
+function validPassConfirm(e){
+    var text = e.target.value;
+    if (text != ''){
+        if (text != inputs[2].value){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+function validAge(e){
+    var text = e.target.value;
+    if (text != ''){
+        if (text<18 || text % 1 != 0){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+function validPhone(e){
+    var text = e.target.value;
+    if (text != ''){
+        if (text.length<7 || text % 1 != 0){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+function validAdress(e){
+    var text = e.target.value;
+    var space = e.target.value.indexOf(' ');
+    var notvalid = false;
+    if (text != ''){
+        for (i=0;i<space;i++){
+            // USED REGULAR EXPRESION /^[A-Za-z]+$/ BECAUSE THERE IS NO TYPE "LETTER", SO I COULD NOT SEPARATE LETTERS FROM SPECIAL CHARACTERS LIKE !,#, ETC.
+            if (text[i].match(/^[A-Za-z]+$/) === null){
+                notvalid = true;
+            }
+        }
+        for (i=space+1;i<text.length;i++){
+            if (typeof(text[i] % 1) != 'number'){
+                notvalid = true;
+            }
+        }
+        if (text.length<5 || space == 0 || space == -1 || space == text.length || notvalid){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+function validCity(e){
+    var text = e.target.value;
+    if (text != ''){
+        if (text.length<3){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+function validDNI(e){
+    var text = e.target.value;
+    if (text != ''){
+        if (text.length <7 || text.length >8){
+            e.target.nextElementSibling.style.display = 'block';
+        }
+    }
+}
+
+
+
