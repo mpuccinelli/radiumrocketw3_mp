@@ -41,6 +41,11 @@
     margin-top: 0;
 }
 
+#output {
+    display: none;
+    font-weight: bold;
+}
+
 @media(min-width: 768px){
     .subscription{
         display: flex;

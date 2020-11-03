@@ -5,6 +5,7 @@ for (i=0;i<inputs.length;i++){
 }
 
 inputs[0].addEventListener('blur',validName);
+inputs[0].addEventListener('keyup',greetings);
 inputs[1].addEventListener('blur',validEmail);
 inputs[2].addEventListener('blur',validPass);
 inputs[3].addEventListener('blur',validPassConfirm);
@@ -27,8 +28,15 @@ function validName(e){
         if (text.length<7 || space == 0 || space == -1 || space == text.length){
             e.target.nextElementSibling.style.display = 'block';
         }
+    } else{
+        salute.style.display = 'none';
     }
 
+}
+var salute = document.getElementById('output');
+function greetings(e){
+    salute.innerHTML = 'Hello ' + e.target.value;
+    salute.style.display = 'block';
 }
 
 function validEmail(e){
