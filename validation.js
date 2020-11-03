@@ -1,4 +1,4 @@
-var inputs = document.getElementsByClassName('form-input')
+var inputs = document.getElementsByClassName('form-input');
 
 for (i=0;i<inputs.length;i++){
     inputs[i].addEventListener('focus',correct);
@@ -128,5 +128,36 @@ function validDNI(e){
     }
 }
 
+var send = document.getElementById('send');
+var errors = document.getElementsByClassName('error-sign');
 
+send.addEventListener('click', sign);
 
+function sign(e){
+    e.preventDefault();
+    var errorValidation = false;
+    var a = 0;
+    var string = '';
+    var information = '';
+    var messages = [];
+
+    for (i=0;i<errors.length;i++){
+        if(errors[i].style.display == 'block'){
+            errorValidation = true;
+            messages[a] = errors[i].innerText;
+            a++;
+        }
+    }
+    if (errorValidation){
+        for (i=0;i<messages.length;i++){
+            string = string + '\n' + messages[i];
+        }
+        alert(string);
+    }else{
+        for (i=0;i<inputs.length;i++){
+            information = information + '\n' + inputs[i].value;
+        }
+        alert(information);
+    }
+
+}
